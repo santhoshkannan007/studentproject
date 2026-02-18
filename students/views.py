@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from .models import Student
 from .forms import StudentForm
 
+def home(request):
+    return render(request, 'students/home.html')
+
 def student_list(request):
     students = Student.objects.all()
     return render(request, 'students/list.html', {'students': students})
